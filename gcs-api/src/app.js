@@ -46,3 +46,5 @@ app.post('/records', (req, res) => {
 app.listen(port, () => {
     console.log('Server is ıp on port ' + port);
 })
+
+module.exports = app;

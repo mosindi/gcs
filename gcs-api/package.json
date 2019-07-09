@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node src/app.js",
     "dev": "nodemon src/app.js",
-    "test": "jest"
+    "test": "jest --watch"
   },
   "keywords": [],
   "author": "",
@@ -15,7 +15,8 @@
     "express": "^4.17.1",
     "hbs": "^4.0.4",
     "mongodb": "^3.2.7",
-    "mongoose": "^5.6.4"
+    "mongoose": "^5.6.4",
+    "supertest": "^4.0.2"
   },
   "devDependencies": {
     "jest": "^24.8.0"
