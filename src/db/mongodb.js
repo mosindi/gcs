@@ -7,7 +7,7 @@ const connectionURL = 'mongodb://dbUser:dbPassword1@ds249623.mlab.com:49623/geti
 const databaseName = 'getir-case-study';
 
 
-const SearchRecords = function (startDate, endDate, minCount, MaxCount,callback) {
+const SearchRecords = function (startDate, endDate, minCount, MaxCount, callback) {
 
     MongoClient.connect(connectionURL, { useNewUrlParser: true }, (error, client) => {
         if (error) {
@@ -15,12 +15,18 @@ const SearchRecords = function (startDate, endDate, minCount, MaxCount,callback)
         }
         const db = client.db(databaseName);
 
+        // Get Data with find; mongoDB return dataset via given find criteria 
+
         db.collection('records').find({ createdAt: { $gte: new Date(startDate), $lt: new Date(endDate) } }).toArray(function (error, data) {
+
             if (error) {
                 callback(error, undefined);
             }
 
+
             var records = data.filter(d => d.counts.reduce((a, b) => a + b, 0) > minCount && d.counts.reduce((a, b) => a + b, 0) < MaxCount)
+
+
             var output = [];
 
             records.forEach((record) => {
