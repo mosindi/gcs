@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Getir Case Study | Sindi</title>
+</head>
+
+<body style="margin-left: 10%; margin-right:10%">
+    <h1>Getir Case Study</h1>
+    <h2>EndPoint:(Post) <a href="https://sindi-gcs.herokuapp.com/records"> https://sindi-gcs.herokuapp.com/records</a>
+    </h2>
+
+    <div>
+        <h3>Request Payload Example :</h3>
+        <pre>
+        {
+            "startDate": "2016-01-26",
+            "endDate": "2018-02-02",
+            "minCount": 2700,
+            "maxCount": 3000
+        }
+        </pre>
+    </div>
+    <br>
+    <hr>
+    <br>
+    <div>
+        <h3>Response Example :</h3>
+        <pre >
+        {
+            "code":0,
+            "msg":"Success",
+            "records":[
+                    {
+                        "key":"TAKwGc6Jr4i8Z487",
+                        "createdAt":"2017-01-28T01:22:14.398Z",
+                        "totalCount":2800
+                    },
+                    {
+                        "key":"NAeQ8eX7e5TEg7oH",
+                        "createdAt":"2017-01-27T08:19:14.135Z",
+                        "totalCount":2900
+                    }
+                ]
+        }
+        </code>
+    </div>
+</body>
+
+</html>
